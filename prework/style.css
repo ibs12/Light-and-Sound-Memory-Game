@@ -1,4 +1,4 @@
-/* a minimalist set of CSS resets */
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 /* default to border-box */
 html {
@@ -6,74 +6,302 @@ html {
   font-size: 16px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /* adjust typography defaults */
 body {
-  font-family: helvetica,arial,sans-serif;
+  font-family: sans-serif;
   margin: 2rem;
   line-height: 1.5;
-  background-color: slategrey;
-  color:white;
+  background-color: white;
+  color: white;
+  letter-spacing: 1px;
 }
 
-h1{
-  font-family: verdana,arial,sans-serif;
-  
+h1 {
+  font-size: 47px;
+  line-height: 1.1;
+  font-weight: 2000;
+  letter-spacing: 0.1px;
+  font-family: sans-serif;
+  color: #032d60;
+  text-align: center;
 }
 
-button{
+p {
+  font-size: 20px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  font-family: sans-serif;
+  color: #032d60;
+  text-align: center;
+}
+
+.screenDirectionText {
+  position: absolute;
+  left: 535px;
+  top: 150px;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 2000;
+  letter-spacing: 0.1px;
+  font-family: sans-serif;
+  color: #032d60;
+  text-align: center;
+}
+
+.currentLengthText {
+  color: black;
+  font-family: sans-serif;
+  letter-spacing: 0.1px;
+}
+
+.strike {
+  color: black;
+  display: inline;
+  font-size: 20px;
+  line-height: 0.0002px;
+  letter-spacing: 0.1px;
+  font-family: sans-serif;
+  display: block;
+  text-align: right;
+  padding-right: 65px;
+  font-weight: 2000;
+  font-size: 25px;
+}
+
+.timer {
+  color: black;
+  font-size: 20px;
+  line-height: 0.0002px;
+  letter-spacing: 0.1px;
+  font-family: sans-serif;
+  display: block;
+  text-align: right;
+  display: block;
+  padding-right: 65px;
+  font-weight: 2000;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+button {
   padding: 10px;
   border-radius: 20px;
 }
 
-#gameButtonArea > button{
-  width:200px;
-  height:200px;
-  margin:2px;
-  border-radius: 300px;
+.startAndStopBtn {
+  display: inline;
+  width: 15%;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-top: 8px;
+  padding-left: 6px;
+  border-radius: 1000px;
+  background: #0071e3;
+  color: #ffffff;
 }
 
-.hidden{
-  display:none;
+.setLengthButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-top: 1px;
+  border-radius: 5px;
+  background: #0071e3;
+  color: #ffffff;
+  border: 1px;
+  text-align: center;
+  width: 147px;
+  height: 19px;
 }
 
-#button1{
+.textbox {
+  position: relative;
+  line-height: 0px;
+  padding-right: 15px;
+  display: block;
+  width: 50%;
+}
+
+#gameButtonArea > button {
+  width: 100px;
+  height: 10px;
+  padding-left: 30px;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-300%, -50%);
+}
+
+.images {
+  position: relative;
+  top: 0px;
+  left: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.guitar {
+  position: relative;
+  top: 0px;
+  left: 110px;
+}
+
+.drum {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+}
+.piano {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+}
+.violin {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+}
+.saxophone {
+  position: absolute;
+  top: -12px;
+  left: 100px;
+}
+
+.trumpet {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+}
+
+.astro {
+  position: relative;
+  height: 500px;
+  width: 1000px;
+  top: 0px;
+  left: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.hiddenImage {
+  visibility: hidden;
+}
+
+#button1 {
   background: lightgreen;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #7aff7a;
+  transition: ease-out 2s;
+  font-size: 2em;
+  margin-top: 30px;
+  position: relative;
 }
 
-#button2{
+#button2 {
   background: lightblue;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #63d0ff;
+  transition: ease-out 2s;
+  font-size: 2em;
+  position: relative;
+  margin-top: 30px;
 }
-#button3{
+#button3 {
   background: pink;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #ff8ae4;
+  transition: ease-out 2s;
+  font-size: 2em;
+  position: relative;
 }
-#button4{
+#button4 {
   background: lightyellow;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #f7ff87;
+  transition: ease-out 2s;
+  font-size: 2em;
+  position: relative;
 }
 
-#button1:active, #button1.lit{
-  background: green;
+#button5 {
+  background: #d4b3ff;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #b175ff;
+  transition: ease-out 2s;
+  font-size: 2em;
+  position: relative;
+}
+#button6 {
+  background: #abfff6;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #75fff1;
+  transition: ease-out 2s;
+  font-size: 2em;
+  position: relative;
 }
 
-#button2:active, #button2.lit{
-  background: blue;
+#button1:active,
+#button1.lit {
+  box-shadow: inset 300px 0 0 0 #00d907;
+  cursor: pointer;
 }
 
-#button3:active, #button3.lit{
-  background: red;
+#button2:active,
+#button2.lit {
+  box-shadow: inset 300px 0 0 0 #0073ff;
+  cursor: pointer;
 }
 
-#button4:active, #button4.lit{
-  background: yellow;
+#button3:active,
+#button3.lit {
+  box-shadow: inset 300px 0 0 0 #ff00c4;
+  cursor: pointer;
 }
 
+#button4:active,
+#button4.lit {
+  box-shadow: inset 300px 0 0 0 #fbff00;
+  cursor: pointer;
+}
+#button5:active,
+#button5.lit {
+  box-shadow: inset 300px 0 0 0 #913dff;
+  cursor: pointer;
+}
+#button6:active,
+#button6.lit {
+  box-shadow: inset 300px 0 0 0 #00ffe5;
+  cursor: pointer;
+}
 
 /* images and videos max out at full width */
 img,
 video {
   height: auto;
-  max-width: 100%;
+  max-width: 50%;
 }

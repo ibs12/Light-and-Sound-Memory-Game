@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-
-    <title>Hello!</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -14,31 +11,186 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-    
     <!-- this is the start of content -->
-    <h1>
-      Light And Sound Memory Game
-    </h1>
+
+    <h1>Light And Sound Memory Game</h1>
+
     <p>
-     Welcome to the game! Repeat back the pattern by pressing the buttons.
+      Welcome to the game! Repeat back the pattern by pressing the buttons
+      before the time runs out. Three strikes you're out.
     </p>
-    
-    <button id="startBtn" onclick="startGame()">
+
+    <button id="startBtn" onclick="startGame()" class="startAndStopBtn">
       Start
     </button>
-    <button id="stopBtn" class = "hidden" onclick="stopGame()">
+    <button id="stopBtn" class="hidden startAndStopBtn" onclick="stopGame()">
       Stop
     </button>
-    
-    <div id="gameButtonArea" >
-      <button id = "button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()" ></button>
-      <button id = "button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
-      <button id = "button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
-      <button id = "button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
-      
-      
-      
+
+    <h1 id="screenDirection" class="screenDirectionText"></h1>
+
+    <div class="strike">
+      <a1 id="strikes"> </a1>
     </div>
-    
+    <br />
+    <a2 id="timerFormat" class="timer"> ${formatTime(timeLeft)} </a2>
+
+    <form>
+      <div class="textbox">
+        <input
+          type="text"
+          id="patternlength"
+          lengthofpattern="patternlength"
+        /><br />
+      </div>
+
+      <button
+        type="button"
+        class="setLengthButton"
+        onclick="getLengthOfPattern();"
+      >
+        <div class="textInButton">Set Length</div>
+      </button>
+    </form>
+
+    <a3 id="currentLength" class="currentLengthText"> Current Length: 10 </a3>
+
+    <audio
+      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Acoustic%20Guitar.wav?v=1648498396829"
+      id="guitarAudio"
+    ></audio>
+
+    <audio
+      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Drums.wav?v=1648505840553"
+      id="drumsAudio"
+    ></audio>
+
+    <audio
+      src=" https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/MusicPiano_BW.3811.wav?v=1648510713212"
+      id="pianoAudio"
+    ></audio>
+
+    <audio
+      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/ViolinsAscend_BW.3786.wav?v=1648511288339"
+      id="violinAudio"
+    ></audio>
+    <audio
+      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/SaxophoneJazzEffect.wav?v=1648512076543"
+      id="saxophoneAudio"
+    ></audio>
+    <audio
+      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Victory%20Trumpet.wav?v=1648515021191"
+      id="trumpetAudio"
+    ></audio>
+
+    <div id="gameButtonArea">
+      <button
+        id="button1"
+        onclick="guess(1)"
+        onmousedown="playMyAudio(1); displayImage(1); doNotCheat()"
+        onmouseup="pauseMyAudio(1); removeImage(1)"
+      ></button>
+
+      <button
+        id="button2"
+        onclick="guess(2)"
+        onmousedown="playMyAudio(2); displayImage(2); doNotCheat()"
+        onmouseup="pauseMyAudio(2); removeImage(2)"
+      ></button>
+      <button
+        id="button3"
+        onclick="guess(3)"
+        onmousedown="playMyAudio(3); displayImage(3); doNotCheat()"
+        onmouseup="pauseMyAudio(3); removeImage(3)"
+      ></button>
+      <button
+        id="button4"
+        onclick="guess(4)"
+        onmousedown="playMyAudio(4); displayImage(4); doNotCheat()"
+        onmouseup="pauseMyAudio(4); removeImage(4)"
+      ></button>
+      <button
+        id="button5"
+        onclick="guess(5)"
+        onmousedown="playMyAudio(5); displayImage(5); doNotCheat()"
+        onmouseup="pauseMyAudio(5); removeImage(5)"
+      ></button>
+      <button
+        id="button6"
+        onclick="guess(6)"
+        onmousedown="playMyAudio(6); displayImage(6); doNotCheat()"
+        onmouseup="pauseMyAudio(6); removeImage(6)"
+      ></button>
+    </div>
+
+    <div class="images">
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/guitar.png?v=1648436421780"
+        class="guitar hiddenImage"
+        alt="guitar"
+        id="guitarImage"
+        width="200"
+        height="200"
+      />
+
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Drum.png?v=1648517608639"
+        alt="drum"
+        class="drum hiddenImage"
+        id="drumImage"
+        width="400"
+        height="400"
+      />
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Piano%20Keys.png?v=1648518926174"
+        alt="piano"
+        class="piano hiddenImage"
+        id="pianoImage"
+        width="400"
+        height="300"
+      />
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Violin.png?v=1648519473155"
+        alt="violin"
+        class="violin hiddenImage"
+        id="violinImage"
+        width="200"
+        height="200"
+      />
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/saxophone.png?v=1648519972826"
+        class="saxophone hiddenImage"
+        alt="saxophone"
+        id="saxophoneImage"
+        width="200"
+        height="200"
+      />
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Trumpet.png?v=1648520176431"
+        alt="trumpet"
+        class="trumpet hiddenImage"
+        id="trumpetImage"
+        width="200"
+        height="200"
+      />
+
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/astro-salesforce-mascot.jpg?v=1648829819923"
+        alt="salesforceCharacterAstro"
+        class="astro hidden"
+        id="salesforceAstro1"
+        width="200"
+        height="200"
+      />
+
+      <img
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/shutterstock_image.png?v=1648834792398"
+        alt="salesforceCharacterAstroSayHi"
+        class="astro hidden"
+        id="salesforceAstro2"
+        width="200"
+        height="200"
+      />
+    </div>
   </body>
 </html>
