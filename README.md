@@ -4,7 +4,7 @@
 
 Submitted by: Ibrahim Allahbukhsh
 
-Time spent: 40 hours spent in total
+Time spent: 42 hours spent in total
 
 Link to project: (live site) https://codepath-prework---ibrahim-allahbukhsh.glitch.me 
 
