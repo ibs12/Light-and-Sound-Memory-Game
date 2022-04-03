@@ -7,7 +7,8 @@ Submitted by: Ibrahim Allahbukhsh
 Time spent: 40 hours spent in total
 
 Link to project: (live site) https://codepath-prework---ibrahim-allahbukhsh.glitch.me 
-                                  (code) https://glitch.com/edit/#!/codepath-prework---ibrahim-allahbukhsh
+
+(code) https://glitch.com/edit/#!/codepath-prework---ibrahim-allahbukhsh
 
 ## Required Functionality
 
@@ -42,18 +43,18 @@ Displays text to user when it's their turn to repeat the pattern
 Allowed users to set there own desired length of the pattern
 
 
-- [Diffent levels of difficulty with shorter amount of time to play back pattern and clue sequences being played even faster than what I have right now, multiples sounds for each button, Create a musical mode where it just plays random instruments at the same time since all of my buttons already play instruments it wouldn't be too hard to add a few more buttonsm, make a better user interface] 
+- [Diffent levels of difficulty with shorter amount of time to play back pattern and clue sequences being played even faster than what I have right now, multiples sounds for each button, Create a musical mode where it just plays random instruments at the same time since all of my buttons already play instruments it wouldn't be too hard to add a few more buttons. I would overall want to make a better user interface] 
 
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
 First win showcase
 ![](http://g.recordit.co/oxJbePLkFj.gif)
-Shows Strikes allowing 2 mistakes, but on the third one you lose
+Shows strikes allowing 2 mistakes, but on the third one you lose
 ![](http://g.recordit.co/45Tn4PL0pU.gif)
 Shows randomly generated patterns each time the game starts, clueHoldTime decreaseing each turn and showing user changing pattern length
 ![](http://g.recordit.co/FckcXx6wtt.gif)
-Shows User selecting a button before the timer starts which causes him to lose the game 
+Shows user selecting a button before the timer starts which causes the user to lose the game 
 ![](http://g.recordit.co/Rq0sIB65C0.gif)
 Shows user running out of time and losing the game 
 ![](http://g.recordit.co/WXn42Yk9Rx.gif)
@@ -63,13 +64,13 @@ Shows user running out of time and losing the game
 [programminghead.com, ￼w3schools.com, mozilla.org, GeeksforGeeks.org]
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[I had many challenges particularly with completing a lot of the optional features. The ticking clock feature gave me the hardest time. Because you need to know when to start, when to restart and especially you need to know how to update the timer and make a visual clock the user can see. Well one of the problems I had was that I was calling the timer when you press the start button, but with a little bit of a delay because we have to start the time when the computer is done giving out the clues. And so if you pressed the start button and right after press the stop button before the startTimer function has the chance to be called. That means the stopTimer is called to stop the time, but the time hasn't started yet. So then after the delay the timer starts even though the game is not playing. This problem really got me stuck for a good hour or two even though in the end it was pretty obvious. Why not just make it so the time only runs when the gamePlaying variable is true. Even though it was simple it made me go through my code a different way and think out the box. After this problem I was able to solve a lot of other different problems much more logically and easily. For the smaller challenges I would use console.log a lot to get a good understanding of what my code is doing so far. ]
+[I had many challenges particularly with completing a lot of the optional features. The ticking clock feature gave me the hardest time. Because you need to know when to start, when to restart and especially you need to know how to update the timer and make a visual clock the user can see. Well one of the problems I had was that I was calling the timer when you press the start button, but with a little bit of a delay because we have to start the time when the computer is done giving out the clues. And so if you pressed the start button and right after press the stop button before the startTimer function has the chance to be called. That means the stopTimer is called to stop the time, but the time hasn't started yet. So then after the delay the timer starts even though the game is not playing. This problem really got me stuck for a good hour or two even though in the end it was pretty obvious. Why not just make it so the time only runs when the gamePlaying variable is true. Even though it was simple it made me go through my code a different way and think out the box. After this problem I was able to solve a lot of other different problems much more logically and easily. For the smaller challenges I would use console.log a lot to get a good understanding of what my code is doing so far.]
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[After completing my submission i've realized that all it takes is some practice/experimentation because with HTML/JS/CSS you can directly see the result your code and you can play around with it until you understand how it works. But I feel as though with just using HTML/JS/CSS you're there's so many thing we can do, but it take a long time and tons of lines of code.  I know there is a lot more to web development than HTML/JS/CSS that I have yet to actually explore. And there is so much more you can do in web development. So what would you say is your favorite topic from web development that's not HTML/JS/CSS that makes web development more exciting? I know during this program we explore a lot of these other topics, throughout the summer, but I would like to get a heads up.   ]
+[After completing my submission i've realized that all it takes is some practice/experimentation because with HTML/JS/CSS you can directly see the result your code and you can play around with it until you understand how it works. But I feel as though with just using HTML/JS/CSS you're there's so many thing we can do, but it take a long time and tons of lines of code.  I know there is a lot more to web development than HTML/JS/CSS that I have yet to actually explore. And there is so much more you can do in web development. So what would you say is your favorite topic from web development that's not HTML/JS/CSS that makes web development more exciting? I know during this program we explore a lot of these other topics, throughout the summer, but I would like to get a heads up.]
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[I would add more features, to make the game look more user friendly. Particularly with animations, i've tried to do it in this project, but it was gonna take too long for me to figure it out. I've already spent way too many hours trying to figure out how everything works for things I don't really need for the project. I would like to make it as smooth as possible, if I knew how because sometimes it can feel clunky. I would add more buttons to make a mode which plays different instruments in a certain random pattern to make some type of beat or music as a fun mode. I was also thinking about making a piano mode where instead of instruments, the buttons are different keys on a keyboard and it can help teach the user to play a piano version of certain songs. But right now I feel as though since we are justing starting with the beginner level topics we don't really realize the full potential of what we can do with web development with certain topics we'll learn over the summer. ]
+[I would add more features, to make the game look more user friendly. Particularly with animations, i've tried to do it in this project, but it was gonna take too long for me to figure it out. I've already spent way too many hours trying to figure out how everything works for things I don't really need for the project. I would like to make it as smooth as possible, if I knew how because sometimes it can feel clunky. I would add more buttons to make a mode which plays different instruments in a certain random pattern to make some type of beat or music as a fun mode. I was also thinking about making a piano mode where instead of instruments, the buttons are different keys on a keyboard and it can help teach the user to play a piano version of certain songs. But right now I feel as though since we are justing starting with the beginner level topics we don't really realize the full potential of what we can do with web development with certain topics we'll learn over the summer.]
 
 
 
