@@ -38,9 +38,14 @@ The following **additional** features are implemented:
 
 Created doNotCheat function so people are unable to cheat and select buttons as the computer is giving out the clues and the timer is not running
 
-Displays text to user when it's their turn to repeat the pattern
+Displays text to user when it's their turn to repeat the pattern or when the computer is playing the pattern
 
 Allowed users to set there own desired length of the pattern
+
+Allowed users to set there own desired length clue hold time
+
+Allowed users to set there own desired amount of clue hold time that changes each turn
+
 
 
 - [Diffent levels of difficulty with shorter amount of time to play back pattern and clue sequences being played even faster than what I have right now, multiples sounds for each button, Create a musical mode where it just plays random instruments at the same time since all of my buttons already play instruments it wouldn't be too hard to add a few more buttons. I would overall want to make a better user interface] 
@@ -76,7 +81,7 @@ Shows user running out of time and losing the game
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](https://buffalo.zoom.us/rec/share/zRuPoQjJlU-y17HkhLWGOWtzUgQahm7NxtHcgkk-79vufC179G-aTBpl1TOVBHcO.uTI7g1qBpIe4a3Cs?startTime=1648785074000)
+[My 5-minute Interview Recording](https://buffalo.zoom.us/rec/share/eM97FGPswj_4lP31A1D5cZPC4f_mGdkafffKR0YICIaeCu8DTXLtbqJNHaWx9NrY.CiZ-HMwo6GtQ55bM)
 
 
 ## License
