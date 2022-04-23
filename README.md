@@ -4,7 +4,7 @@
 
 Submitted by: Ibrahim Allahbukhsh
 
-Time spent: 42 hours spent in total
+Time spent: 94 hours spent in total
 
 Link to project: (live site) https://codepath-prework---ibrahim-allahbukhsh.glitch.me 
 
@@ -42,11 +42,19 @@ Displays text to user when it's their turn to repeat the pattern or when the com
 
 Allowed users to set there own desired length of the pattern
 
+Allowed users to set there own desired time limit
+
 Allowed users to set there own desired length clue hold time
 
 Allowed users to set there own desired amount of clue hold time that changes each turn
 
+Allowed users to set there own desired amount of mistakes allowed until they lose
 
+Added dark-mode
+
+Reset Button to reset settings to default except for dark mode
+
+Created side navigation bar for user to easily access settings
 
 - [Diffent levels of difficulty with shorter amount of time to play back pattern and clue sequences being played even faster than what I have right now, multiples sounds for each button, Create a musical mode where it just plays random instruments at the same time since all of my buttons already play instruments it wouldn't be too hard to add a few more buttons. I would overall want to make a better user interface] 
 
@@ -63,6 +71,11 @@ Shows user selecting a button before the timer starts which causes the user to l
 ![](http://g.recordit.co/Rq0sIB65C0.gif)
 Shows user running out of time and losing the game 
 ![](http://g.recordit.co/WXn42Yk9Rx.gif)
+Added Dark Mode and many more customizable settings for the user 
+![](http://g.recordit.co/PuMNHygX3E.gif)
+
+
+
 
 ## Reflection Questionss
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
