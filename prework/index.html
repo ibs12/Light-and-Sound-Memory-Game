@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/favicon-32x32.png?v=1649355447490"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/favicon-16x16.png?v=1649355447815"
+    />
+
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- BOXIcons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -10,187 +31,445 @@
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
-  <body>
-    <!-- this is the start of content -->
 
-    <h1>Light And Sound Memory Game</h1>
+  <!-- this is the start of content -->
 
-    <p>
-      Welcome to the game! Repeat back the pattern by pressing the buttons
-      before the time runs out. Three strikes you're out.
-    </p>
 
-    <button id="startBtn" onclick="startGame()" class="startAndStopBtn">
-      Start
-    </button>
-    <button id="stopBtn" class="hidden startAndStopBtn" onclick="stopGame()">
-      Stop
-    </button>
+    <div class="sidebar close">
+    <div class="logo-details">
+      <li>
+        <a href="#">
+          <i class="bx bx-cog"></i>
 
-    <h1 id="screenDirection" class="screenDirectionText"></h1>
-
-    <div class="strike">
-      <a1 id="strikes"> </a1>
+          <span class="logo_name link_name">Setting</span>
+        </a>
+      </li>
     </div>
-    <br />
-    <a2 id="timerFormat" class="timer"> ${formatTime(timeLeft)} </a2>
 
-    <form>
-      <div class="textbox">
-        <input
-          type="text"
-          id="patternlength"
-          lengthofpattern="patternlength"
-        /><br />
+
+
+
+      <ul class="nav-links">
+        
+        <li>
+          <a href="#">
+            <i class="bx bx-bar-chart-alt-2"></i>
+        
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a class="link_name" href="#" id="currentLength"></a>
+            </li>
+
+            
+            <li>
+              <div class="dropupLength">
+                <form>
+                  <div class="textbox">
+                    <input
+                      type="text"
+                      id="patternlength"
+                      lengthofpattern="patternlength"
+                    /><br />
+                  </div>
+
+                  <button
+                    type="button"
+                    class="setLengthButton"
+                    onclick="getLengthOfPattern();"
+                  >
+                    <div class="textInButton">Set Pattern Length</div>
+                  </button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bx bx-time-five"></i>
+           
+            </a>
+    
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#" id="timeLimit"></a></li>
+            <li>
+              <div class="dropupChangeTime">
+                <form>
+                  <div class="textbox">
+                    <input
+                      type="text"
+                      id="changeTime"
+                      changetime="changeTime"
+                      value=""
+                    /><br />
+                  </div>
+
+                  <button
+                    type="button"
+                    class="setLengthButton"
+                    onclick="getChangeTime();"
+                  >
+                    <div class="textInButton">Set Time Limit</div>
+                  </button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bx bx-timer"></i>
+            </a>
+           
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#" id="currentHoldTime"></a></li>
+            <li>
+              <div class="dropupClueHoldTime">
+                <form>
+                  <div class="textbox">
+                    <input
+                      type="text"
+                      id="clueHoldTime"
+                      clueholdtime="clueHoldTime"
+                    /><br />
+                  </div>
+
+                  <button
+                    type="button"
+                    class="setLengthButton"
+                    onclick="getClueHoldTime();"
+                  >
+                    <div class="textInButton">Set Clue Length</div>
+                  </button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-alarm-add"></i>
+
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a class="link_name" href="#" id="clueLengthHoldTime+/-"></a>
+            </li>
+            <li>
+              <div class="dropupChangeClueHoldTime">
+                <form>
+                  <div class="textbox">
+                    <input
+                      type="text"
+                      id="changeHoldTime"
+                      changeholdtime="clueHoldTime"
+                    /><br />
+                  </div>
+
+                  <button
+                    type="button"
+                    class="setLengthButton"
+                    onclick="getChangeHoldTime();"
+                  >
+                    <div class="textInButton">+/- Clue Length</div>
+                  </button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-block"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#" id="strikeLimit"></a></li>
+
+            <li>
+              <div class="dropupChangeStrikes">
+                <form>
+                  <div class="textbox">
+                    <input
+                      type="text"
+                      id="changeStrikes"
+                      changestrikes="changeStrikes"
+                    /><br />
+                  </div>
+
+                  <button
+                    type="button"
+                    class="setLengthButton"
+                    onclick="getChangeStrikes();"
+                  >
+                    <div class="textInButton">Set Allowed Strikes</div>
+                  </button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bx bx-moon"></i>
+  
+            </a>
+
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Dark Mode</a></li>
+            <li>
+              <label class="switch">
+                <input type="checkbox" onclick="toggleTheme()" />
+                <span class="slider round"></span>
+              </label>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a>
+            <i class="bx bx-history"></i>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#"></a></li>
+
+            <li>
+              <button class="dropbtnResetSetting" onclick = "resetSettings()">Reset</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
+  <body id="body" class="">
+    <section id="home-section" class="home-section">
+      <div class="home-content">
+
       </div>
 
+      <!-- HEADING TEXT -->
+
+      <h1 id="heading" class="">Light And Sound Memory Game</h1>
+      <p id="paragraph" class="">
+        Welcome to the game! Repeat back the pattern by pressing the buttons
+        before the time runs out. Three strikes you're out.
+      </p>
+
+      <!-- END OF HEADING TEXT -->
+
+      <!-- START/STOP BUTTONS -->
       <button
-        type="button"
-        class="setLengthButton"
-        onclick="getLengthOfPattern();"
+        id="startBtn"
+        onclick="startGame()"
+        class="startAndStopBtn startBtn"
       >
-        <div class="textInButton">Set Length</div>
+        Start
       </button>
-    </form>
-
-    <a3 id="currentLength" class="currentLengthText"> Current Length: 10 </a3>
-
-    <audio
-      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Acoustic%20Guitar.wav?v=1648498396829"
-      id="guitarAudio"
-    ></audio>
-
-    <audio
-      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Drums.wav?v=1648505840553"
-      id="drumsAudio"
-    ></audio>
-
-    <audio
-      src=" https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/MusicPiano_BW.3811.wav?v=1648510713212"
-      id="pianoAudio"
-    ></audio>
-
-    <audio
-      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/ViolinsAscend_BW.3786.wav?v=1648511288339"
-      id="violinAudio"
-    ></audio>
-    <audio
-      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/SaxophoneJazzEffect.wav?v=1648512076543"
-      id="saxophoneAudio"
-    ></audio>
-    <audio
-      src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Victory%20Trumpet.wav?v=1648515021191"
-      id="trumpetAudio"
-    ></audio>
-
-    <div id="gameButtonArea">
       <button
-        id="button1"
-        onclick="guess(1)"
-        onmousedown="playMyAudio(1); displayImage(1); doNotCheat()"
-        onmouseup="pauseMyAudio(1); removeImage(1)"
-      ></button>
+        id="stopBtn"
+        class="hidden startAndStopBtn stopBtn"
+        onclick="stopGame()"
+      >
+        Stop
+      </button>
+      <!-- END OF START/STOP BUTTONS -->
 
-      <button
-        id="button2"
-        onclick="guess(2)"
-        onmousedown="playMyAudio(2); displayImage(2); doNotCheat()"
-        onmouseup="pauseMyAudio(2); removeImage(2)"
-      ></button>
-      <button
-        id="button3"
-        onclick="guess(3)"
-        onmousedown="playMyAudio(3); displayImage(3); doNotCheat()"
-        onmouseup="pauseMyAudio(3); removeImage(3)"
-      ></button>
-      <button
-        id="button4"
-        onclick="guess(4)"
-        onmousedown="playMyAudio(4); displayImage(4); doNotCheat()"
-        onmouseup="pauseMyAudio(4); removeImage(4)"
-      ></button>
-      <button
-        id="button5"
-        onclick="guess(5)"
-        onmousedown="playMyAudio(5); displayImage(5); doNotCheat()"
-        onmouseup="pauseMyAudio(5); removeImage(5)"
-      ></button>
-      <button
-        id="button6"
-        onclick="guess(6)"
-        onmousedown="playMyAudio(6); displayImage(6); doNotCheat()"
-        onmouseup="pauseMyAudio(6); removeImage(6)"
-      ></button>
-    </div>
+      <!-- STRIKES AND TIME TEXT -->
 
-    <div class="images">
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/guitar.png?v=1648436421780"
-        class="guitar hiddenImage"
-        alt="guitar"
-        id="guitarImage"
-        width="200"
-        height="200"
-      />
+      <div id="strike" class="strike">
+        <a id="strikes"> </a>
+      </div>
+      <br />
 
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Drum.png?v=1648517608639"
-        alt="drum"
-        class="drum hiddenImage"
-        id="drumImage"
-        width="400"
-        height="400"
-      />
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Piano%20Keys.png?v=1648518926174"
-        alt="piano"
-        class="piano hiddenImage"
-        id="pianoImage"
-        width="400"
-        height="300"
-      />
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Violin.png?v=1648519473155"
-        alt="violin"
-        class="violin hiddenImage"
-        id="violinImage"
-        width="200"
-        height="200"
-      />
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/saxophone.png?v=1648519972826"
-        class="saxophone hiddenImage"
-        alt="saxophone"
-        id="saxophoneImage"
-        width="200"
-        height="200"
-      />
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Trumpet.png?v=1648520176431"
-        alt="trumpet"
-        class="trumpet hiddenImage"
-        id="trumpetImage"
-        width="200"
-        height="200"
-      />
+      <a2 id="timerFormat" class="timer light-theme"
+        >${formatTime(timeLeft)}
+      </a2>
 
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/astro-salesforce-mascot.jpg?v=1648829819923"
-        alt="salesforceCharacterAstro"
-        class="astro hidden"
-        id="salesforceAstro1"
-        width="200"
-        height="200"
-      />
+      <!-- END OF STRIKES AND TIME TEXT -->
 
-      <img
-        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/shutterstock_image.png?v=1648834792398"
-        alt="salesforceCharacterAstroSayHi"
-        class="astro hidden"
-        id="salesforceAstro2"
-        width="200"
-        height="200"
-      />
-    </div>
+      <!-- SETTINGS QUICK MENU -->
+      <div class="setting">
+        <!-- <a href="settings.html">-->
+        <div class="settingMenu">
+          <!-- USER TEXTBOX AND BUTTONS -->
+        </div>
+      </div>
+      <!-- END OF USER TEXTBOX AND BUTTONS -->
+      <!-- END OF SETTINGS MENU -->
+
+      <!-- AUDIO -->
+      <audio
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Acoustic%20Guitar.wav?v=1648498396829"
+        id="guitarAudio"
+      ></audio>
+
+      <audio
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Drums.wav?v=1648505840553"
+        id="drumsAudio"
+      ></audio>
+
+      <audio
+        src=" https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/MusicPiano_BW.3811.wav?v=1648510713212"
+        id="pianoAudio"
+      ></audio>
+
+      <audio
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/ViolinsAscend_BW.3786.wav?v=1648511288339"
+        id="violinAudio"
+      ></audio>
+      <audio
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/SaxophoneJazzEffect.wav?v=1648512076543"
+        id="saxophoneAudio"
+      ></audio>
+      <audio
+        src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Victory%20Trumpet.wav?v=1648515021191"
+        id="trumpetAudio"
+      ></audio>
+
+      <!-- END OF AUDIO -->
+
+      <!-- IMAGES -->
+      <div class="images">
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/guitar.png?v=1648436421780"
+          class="guitar hiddenImage"
+          alt="guitar"
+          id="guitarImage"
+          width="200"
+          height="200"
+        />
+
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Drum.png?v=1648517608639"
+          alt="drum"
+          class="drum hiddenImage"
+          id="drumImage"
+          width="400"
+          height="400"
+        />
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Piano%20Keys.png?v=1648518926174"
+          alt="piano"
+          class="piano hiddenImage"
+          id="pianoImage"
+          width="400"
+          height="300"
+        />
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Violin.png?v=1648519473155"
+          alt="violin"
+          class="violin hiddenImage"
+          id="violinImage"
+          width="200"
+          height="200"
+        />
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/saxophone.png?v=1648519972826"
+          class="saxophone hiddenImage"
+          alt="saxophone"
+          id="saxophoneImage"
+          width="200"
+          height="200"
+        />
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/Trumpet.png?v=1648520176431"
+          alt="trumpet"
+          class="trumpet hiddenImage"
+          id="trumpetImage"
+          width="200"
+          height="200"
+        />
+
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/astro-salesforce-mascot.jpg?v=1648829819923"
+          alt="salesforceCharacterAstro"
+          class="astro hidden"
+          id="salesforceAstro1"
+          width="200"
+          height="200"
+        />
+
+        <img
+          src="https://cdn.glitch.global/edeee2cc-4248-414e-a34b-bdec15a9c561/shutterstock_image.png?v=1648834792398"
+          alt="salesforceCharacterAstroSayHi"
+          class="astro hidden"
+          id="salesforceAstro2"
+          width="200"
+          height="200"
+        />
+      </div>
+
+      <!-- END OF IMAGES -->
+
+      <!-- GAME BUTTONS -->
+
+      <div id="gameButtonArea">
+        <button
+          id="button1"
+          onclick="guess(1)"
+          onmousedown="playMyAudio(1); displayImage(1); doNotCheat()"
+          onmouseup="pauseMyAudio(1); removeImage(1)"
+        ></button>
+
+        <button
+          id="button2"
+          onclick="guess(2)"
+          onmousedown="playMyAudio(2); displayImage(2); doNotCheat()"
+          onmouseup="pauseMyAudio(2); removeImage(2)"
+        ></button>
+        <button
+          id="button3"
+          onclick="guess(3)"
+          onmousedown="playMyAudio(3); displayImage(3); doNotCheat()"
+          onmouseup="pauseMyAudio(3); removeImage(3)"
+        ></button>
+        <button
+          id="button4"
+          onclick="guess(4)"
+          onmousedown="playMyAudio(4); displayImage(4); doNotCheat()"
+          onmouseup="pauseMyAudio(4); removeImage(4)"
+        ></button>
+        <button
+          id="button5"
+          onclick="guess(5)"
+          onmousedown="playMyAudio(5); displayImage(5); doNotCheat()"
+          onmouseup="pauseMyAudio(5); removeImage(5)"
+        ></button>
+        <button
+          id="button6"
+          onclick="guess(6)"
+          onmousedown="playMyAudio(6); displayImage(6); doNotCheat()"
+          onmouseup="pauseMyAudio(6); removeImage(6)"
+        ></button>
+      </div>
+      <!-- END OF GAME BUTTONS -->
+
+      <!-- DISPLAY SCREEN DIRECTION -->
+      <h1 id="screenDirection" class="screenDirectionText"></h1>
+      <!-- END OF DISPLAY SCREEN DIRECTION -->
+    </section>
+    <script>
+   
+
+      let sidebarClose = document.querySelector(".nav-links");
+      let settingsBtn = document.querySelector(".bx-cog");
+      console.log(settingsBtn);
+      settingsBtn.addEventListener("click", () => {
+        sidebarClose.classList.toggle("hidden");
+
+      });
+    </script>
   </body>
 </html>
+
